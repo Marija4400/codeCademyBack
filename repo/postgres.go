@@ -11,7 +11,7 @@ type Respoitory struct {
 	DB *gorm.DB
 }
 
-var repoPostres Respoitory
+var RepoPostres Respoitory
 
 func CreateConnection() error {
 	config := configuration.GlobalConfiguration
@@ -31,7 +31,7 @@ func CreateConnection() error {
 		panic("Eror connecting to database, check env data! - " + err.Error())
 	}
 
-	repoPostres.DB = db
+	RepoPostres.DB = db
 	fmt.Println("Connected to database!")
 	return nil
 }
